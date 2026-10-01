@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+  <!-- Light Blue Background -->
+  <path
+      android:fillColor="#8DBCE7"
+      android:pathData="M0,0h100v100h-100z"/>
+  <!-- White Head Silhouette -->
+  <path
+      android:fillColor="#FFFFFFFF"
+      android:pathData="M50,14c-12.15,0 -22,9.85 -22,22s9.85,22 22,22 22,-9.85 22,-22 -9.85,-22 -22,-22z"/>
+  <!-- White Shoulders Silhouette -->
+  <path
+      android:fillColor="#FFFFFFFF"
+      android:pathData="M5,100h90v-26c0,-15 -20.15,-22 -45,-22s-45,7 -45,22v26z"/>
+</vector>

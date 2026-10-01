@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sun_menu_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#60000000"
+    android:clickable="true"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:id="@+id/sun_menu_container"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_centerInParent="true">
+
+        <!-- Center Contact Avatar -->
+        <ImageView
+            android:id="@+id/center_contact_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:elevation="12dp"
+            android:src="@drawable/ic_person" />
+
+    </RelativeLayout>
+
+    <!-- Contact Name and Phone Label below Sun Menu -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sun_menu_container"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/center_contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="איש קשר" />
+
+        <TextView
+            android:id="@+id/center_contact_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFB0B0B0"
+            android:textSize="15sp"
+            android:text="050-0000000" />
+    </LinearLayout>
+
+</RelativeLayout>

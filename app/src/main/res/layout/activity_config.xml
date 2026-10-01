@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F7"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="הגדרות ווידג'ט איש קשר"
+            android:textColor="#1D1D1F"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Live Preview Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="תצוגה מקדימה"
+                    android:textColor="#86868B"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Widget Live Preview Container -->
+                <FrameLayout
+                    android:id="@+id/preview_container"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="#33000000"
+                    android:padding="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/preview_inner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/preview_image"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_person" />
+
+                        <TextView
+                            android:id="@+id/preview_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="איש קשר"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 1. Pick Contact Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_pick_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="בחר איש קשר מהטלפון 👤"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/txt_selected_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="טרם נבחר איש קשר"
+            android:textColor="#007AFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Phone Number Spinner -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="מספר טלפון ברירת מחדל:"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinner_phone_numbers"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 2. Display Mode -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="תצוגת איש הקשר:"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_display_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rb_both"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="תמונה + שם"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rb_image_only"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="תמונה בלבד (ווידג'ט)" />
+
+            <RadioButton
+                android:id="@+id/rb_name_only"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="שם בלבד" />
+        </RadioGroup>
+
+        <!-- 3. Shape -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="צורת האייקון / התמונה (לערכים בווידג'ט בלבד):"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_shape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rb_circle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="עגול"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rb_square"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ריבוע (ווידג'ט בלבד)" />
+        </RadioGroup>
+
+        <!-- 5. Background -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="רקע (רלוונטי לווידג'ט בלבד):"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rb_bg_transparent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="שקוף"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rb_bg_black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="שחור" />
+
+            <RadioButton
+                android:id="@+id/rb_bg_white"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="לבן" />
+
+            <RadioButton
+                android:id="@+id/rb_bg_blue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="כחול" />
+        </RadioGroup>
+
+        <!-- 6. Single Click Action -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="פעולה בלחיצה אחת:"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinner_single_click"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 8. Sun Menu Apps -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="אפליקציות שיוצגו בתפריט השמש:"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp" />
+
+        <CheckBox
+            android:id="@+id/cb_sun_call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="חיוג טלפוני ישיר"
+            android:checked="true"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/cb_sun_sms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="שליחת SMS"
+            android:checked="true"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/cb_sun_whatsapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WhatsApp"
+            android:checked="true"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/cb_sun_telegram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Telegram"
+            android:checked="true"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/cb_sun_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="פתיחת פרטי איש הקשר"
+            android:checked="true"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Save Widget Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_widget"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="הוסף כווידג'ט 1x1 ✨"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Add Desktop Shortcut Button (Enables Android Desktop Folders) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_shortcut"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="הוסף כאייקון (ניתן לגרירה ומיזוג לתיקייה 📁)"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:strokeWidth="2dp"
+            app:strokeColor="#007AFF"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>
